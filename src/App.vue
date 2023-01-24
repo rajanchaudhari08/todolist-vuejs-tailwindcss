@@ -20,8 +20,8 @@ const input_getListArray = () => {
     done: false,
     createdAt: new Date().getTime(),
   });
-  input_userContent.value = ""
-  input_userContentCategory.value = null
+  input_userContent.value = "";
+  input_userContentCategory.value = null;
 };
 
 watch(
@@ -60,35 +60,38 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
+  <main class="">
     <!-- Header -->
     <section>
-      <header>
-        <div>
-          Hi
-          <input
-            type="text"
-            placeholder="Enter Your Name here"
-            v-model="input_userName"
-          />
-        </div>
+      <header class="">
+        <div class="">Hi</div>
+        <input
+          class=""
+          type="text"
+          placeholder="Enter Your Name here"
+          v-model="input_userName"
+        />
       </header>
     </section>
     <!-- ToDo List -->
-    <section>
-      <div>Create a ToDo List</div>
-      <form action="" @submit.prevent="input_getListArray">
+    <section class="">
+      <div>Create Your To Do List</div>
+      <form class="" action="" @submit.prevent="input_getListArray">
         <div>What's up there</div>
         <input
+          class=""
           type="text"
           name="inputUserContent"
           placeholder="Enter Your Task here"
           v-model="input_userContent"
         />
         <!-- {{ input_userContent }} -->
-
-        <div>Select a Category here</div>
-        <div>
+        <section class="">
+          <div>
+            Select a Category here
+          </div>
+        </section>
+        <div class="">
           <label for=""
             ><input
               type="radio"
@@ -106,17 +109,17 @@ onMounted(() => {
           /></label>
           <div>Professional</div>
           <!-- {{ input_userContentCategory }} -->
-          <input type="submit" value="Add in Bucket" />
         </div>
+        <input class="" type="submit" value="Add in Bucket" />
       </form>
     </section>
 
     <!-- {{ getListArrayFilter }} -->
     <!-- Bucket List -->
-    <section>
+    <section class="">
       <div>Bucket List</div>
       <div>
-        <div
+        <div class=""
           v-for="ListArrayFilter in getListArrayFilter"
           :class="`ListArrayFilter-Item ${ListArrayFilter.done && 'done'}`"
         >
@@ -135,7 +138,7 @@ onMounted(() => {
           </div>
 
           <div>
-            <button @click="remove_ListArrayFilter(ListArrayFilter)">
+            <button class="" @click="remove_ListArrayFilter(ListArrayFilter)">
               Delete
             </button>
           </div>
